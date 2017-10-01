@@ -4,5 +4,40 @@
 Purchases
 {% endblock %}
 {% block body %}
-
+<div class = container>
+	hello
+	<table class="table table-bordered">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Date</th>
+      <th>ID</th>
+      <th>Amount</th>
+      <th>SGST & Cgst</th>
+      <th>AMount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{ data.time }}</td>
+      <td>{{ data.ItemDescription }}</td>
+      <td>{{ data.Rate}}</td>
+      <td>{{ data.TaxableValue }}</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+{% endblock %}
 

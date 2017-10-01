@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from core.views import home,Purchase_Invoice
+from core.views import home,Purchase_Invoice,Purchase_Main
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$',home,name="index"),
     url(r'^purchase/invoice$',Purchase_Invoice,name='purchaseform'),
+    url(r'^purchase/$',Purchase_Main,name='purchase')
     ]

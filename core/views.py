@@ -17,5 +17,6 @@ def Purchase_Invoice(request):
     context = {'form':form,}
     return render(request,'purchaseinvoice.html',context)
 
-def Purchase_Main(request):
-	return render(request,'')
+def Purchase_Main(request,pk):
+	data = PurchaseInfo.objects.get(id=pk)
+	return render(request,'purchase.html',{'data':data})
