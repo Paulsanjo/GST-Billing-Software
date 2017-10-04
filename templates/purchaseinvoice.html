@@ -1,11 +1,94 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<form method="post">
-	{% csrf_token %}
-	{{ form.as_p }}
+ <div class="row">
+		  <h1><span class="badge badge-default">Record Purchase Invoice</span></h1>
+		  <div class="col">&nbsp&nbsp</div>
+		  <div class="col"></div>
+		  <div class="col">
+			<button type="button" class="btn btn-secondary btn-lg btn-block">View Purchase Invoice List</button>
+		  </div>
+	      <div class="col">
+			<button type="button" class="btn btn-secondary btn-lg btn-block">Back</button>
+		  </div>
+		  <div class="col">
+			<button type="button" class="btn btn-success btn-lg btn-block">Save Invoice</button>
+		  </div>
+		</div>
+        <br><hr>
+<div class="row">
+		  <div class="col-4"><h5>Invoice serial number</h5></div>
+		  <div class="col-2"><h5>Invoice Date</h5></div>
+		  <div class="col-3"><h5>Reference</h5></div>
+		  <div class="col-3"><h5>Due Date</h5></div>
+		</div>
 
-	<input class type="submit" name="submit" value="Submit"	class="submit"/>
-</form>
+<div class="row">
+		  <div class="col-3">{{ form.SerialNumber }}</div>
+		  <div class="col-3"><input type="date" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="dd/mm/yyyy"></div>
+		  <div class="col-3">{{ form.Refernce }}</div>
+		  <div class="col-3"><input type="date" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="dd/mm/yyyy"></div>
+		  <br><hr><br>
+		
+		<h5>Vendor Name</h5>
+		{{ form.VendorName}}
 
+		<br>
+		<h5>GSTIN:</h5>
+		<div class="row">
+  			<div class="col-4">
+    			{{ form.}}
+  			</div>
+        </div>
+
+		<br><br>
+
+		<table class="table table-bordered">
+		  <thead>
+			<tr>
+			  <th>#</th>
+			  <th>Item Description</th>
+			  <th>Item Type</th>
+			  <th>HSN/SAC</th>
+			  <th>Qty</th>
+			  <th>Unit of Measurement</th>
+			  <th>Rate(Rs.)</th>
+			  <th>Discount</th>
+			  <th>Taxable Value</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			<tr>
+			  <th scope="row">1</th>
+			  <td>{{ form.ItemDescription}}</td>
+			  <td>{{ form.ItemType}}</td>
+			  <td>{{ form.HSNa}}</td>
+			  <td>{{ form.Qty}}</td>
+			  <td>{{ form.Rate}}</td>
+			  <td>{{ form.Discount}}</td>
+			  <td>{{ form.Taxable_value}}</td>
+			</tr>
+			
+		  </tbody>
+		</table>
+		<br> 
+<div class='row'>
+	<div class="col-4"><h5>CGST</h5></div>
+	<div class="col-4"><h5>SGST</h5></div>
+</div>
+
+<div class="row">
+	<div class="col=4">{{ form.}}</div>
+	<div class="col-4">{{ form.}}</div>
+</div>
+
+<br>
+<div class="row">
+	<div class="col-6"><h5>Total Value</h5></div>
+</div>
+<br>
+<div class="row">
+	<div class="col-6">{{ form.}}</div>
+</div>
+<br>
 {% endblock %}
